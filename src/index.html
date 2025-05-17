@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>PT DIAN UNGGUL SAMUDRA PERKASA</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mobile.css" />
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
@@ -12,7 +13,7 @@
     <header class="hero">
         <div class="container hero-flex">
           <div class="logo-container">
-            <img src="images/logo no name no bg.png" alt="Company Logo" class="logo" />
+            <img src="images/logo no name no bg.png" alt="Company Logo" class="logo" loading="lazy" />
           </div>
           <div class="hero-text">
             <h1>PT DIAN UNGGUL SAMUDRA PERKASA</h1>
@@ -51,7 +52,7 @@
         </div>
         
         <div class="about-image">
-          <img src="images/about us.jpg" alt="Maritime operations at PT Dian Unggul Samudra Perkasa">
+          <img src="images/about us.jpg" alt="Maritime operations at PT Dian Unggul Samudra Perkasa" loading="lazy">
         </div>
       </div>
     </section>
@@ -120,27 +121,27 @@
           <div class="carousel">
             <div class="carousel-track" id="carousel-track">
               <div class="carousel-slide">
-                <img src="images/mandara.jpg" alt="Project 1" />
+                <img src="images/mandara.jpg" alt="Project 1" loading="lazy" />
                 <h3>Bali Mandara Toll Road</h3>
                 <p>Marine support for toll road development over water in Bali.</p>
               </div>
               <div class="carousel-slide">
-                <img src="images/suramadu.jpg" alt="Project 2" />
+                <img src="images/suramadu.jpg" alt="Project 2" loading="lazy" />
                 <h3>Suramadu Bridge</h3>
                 <p>Logistics for Surabaya–Madura bridge construction.</p>
               </div>
               <div class="carousel-slide">
-                <img src="images/g island.png" alt="Project 3" />
+                <img src="images/g island.png" alt="Project 3" loading="lazy" />
                 <h3>G Island Reclamation</h3>
                 <p>Support during North Jakarta island expansion.</p>
               </div>
               <div class="carousel-slide">
-                <img src="images/project4.jpg" alt="Project 4" />
+                <img src="images/project4.jpg" alt="Project 4" loading="lazy" />
                 <h3>Kotabaru-Batulicin Bridge</h3>
                 <p>Bridge construction support in South Kalimantan.</p>
               </div>
               <div class="carousel-slide">
-                <img src="images/project5.jpg" alt="Project 5" />
+                <img src="images/project5.jpg" alt="Project 5" loading="lazy" />
                 <h3>Jakarta Giant Sea Wall</h3>
                 <p>Flood barrier logistics project in North Jakarta.</p>
               </div>
@@ -200,7 +201,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo no-decoration">
-          <img src="images/logo no name no bg.png" alt="DUSP Logo">
+          <img src="images/logo no name no bg.png" alt="DUSP Logo" loading="lazy">
           <p>Reliable and professional maritime logistics for Indonesia's diverse needs.</p>
         </div>
         
@@ -284,6 +285,26 @@
         navbar.classList.remove('scrolled');
       }
     });
+
+    // Lazy loading images fix for mobile
+    document.addEventListener("DOMContentLoaded", function() {
+      const lazyImages = document.querySelectorAll("img[loading='lazy']");
+      lazyImages.forEach(img => {
+        img.addEventListener('load', function() {
+          img.classList.add('loaded');
+        });
+      });
+    });
+    
+    // Handle viewport height issues on mobile browsers
+    function setVH() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', setVH);
+    setVH();
   </script>    
 </body>
 </html>
