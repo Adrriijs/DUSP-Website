@@ -243,8 +243,10 @@ section:hover h2::after {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
-    padding: 30px 0;
+    padding: 30px 15px;
     list-style: none;
+    max-width: calc(100% - 10px);
+    margin: 0 auto;
 }
 
 .columns li {
@@ -870,6 +872,7 @@ button:hover, .project-info button:hover, .contact-form button:hover, .carousel-
     .columns {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 15px;
+        padding: 20px 10px;
     }
     
     .columns li {
@@ -1224,7 +1227,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
 }
 
-.columns li i {
+.columns.client-grid li i {
     color: var(--blue);
     margin-right: 8px;
     font-size: 0.9rem;
@@ -1232,20 +1235,33 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
 }
 
-.columns li:hover i {
+.columns.client-grid li:hover i {
     opacity: 1;
     transform: scale(1.2);
 }
 
-.columns {
+/* Add subtle motion effect to draw attention */
+@keyframes client-card-pulse {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+.columns.client-grid li:nth-child(3n+1):hover {
+    animation: client-card-pulse 2s infinite ease-in-out;
+}
+
+.columns.client-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
-    padding: 30px 0;
+    padding: 30px 15px;
     list-style: none;
+    max-width: calc(100% - 10px);
+    margin: 0 auto;
 }
 
-.columns li {
+.columns.client-grid li {
     background: white;
     padding: 16px 20px;
     border-radius: 12px;
@@ -1258,16 +1274,20 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     min-height: 80px;
+    margin-bottom: 0;
+    /* Ensure the boxes don't touch the edge */
+    box-sizing: border-box;
+    width: 100%;
 }
 
-.columns li:hover {
+.columns.client-grid li:hover {
     box-shadow: 0 8px 25px rgba(0,91,175,0.15), 0 1.5px 8px rgba(0,0,0,0.08);
     transform: translateY(-5px);
     border-left: 3px solid var(--blue);
     background: linear-gradient(to right, rgba(0,91,175,0.03), white);
 }
 
-.columns li::before {
+.columns.client-grid li::before {
     content: '';
     position: absolute;
     width: 8px;
@@ -1281,28 +1301,18 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.3s ease;
 }
 
-.columns li:hover::before {
+.columns.client-grid li:hover::before {
     opacity: 1;
 }
 
-/* Add subtle motion effect to draw attention */
-@keyframes client-card-pulse {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-    100% { transform: translateY(0); }
-}
-
-.columns li:nth-child(3n+1):hover {
-    animation: client-card-pulse 2s infinite ease-in-out;
-}
-
 @media (max-width: 768px) {
-    .columns {
+    .columns.client-grid {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 15px;
+        padding: 20px 10px;
     }
     
-    .columns li {
+    .columns.client-grid li {
         padding: 15px;
         min-height: 70px;
         font-size: 0.95rem;
