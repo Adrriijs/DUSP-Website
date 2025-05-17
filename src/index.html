@@ -66,18 +66,23 @@
       <div class="section-title-container">
         <h2>Our Services</h2>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Shipping Business</h3>
-          <p>Tugboat and Barge Rental (Time Charter & Freight Charter)</p>
+      <div class="services-container">
+        <div class="services-video">
+          <video src="images/vid1.mp4" autoplay loop muted="muted" playsinline controls preload="metadata" volume="0"></video>
         </div>
-        <div class="service-card">
-          <h3>Docking Services</h3>
-          <p>Shipyard Facilities</p>
-        </div>
-        <div class="service-card">
-          <h3>Shipping Agency</h3>
-          <p>Port and Vessel Operations</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Shipping Business</h3>
+            <p>Tugboat and Barge Rental (Time Charter & Freight Charter)</p>
+          </div>
+          <div class="service-card">
+            <h3>Docking Services</h3>
+            <p>Shipyard Facilities</p>
+          </div>
+          <div class="service-card">
+            <h3>Shipping Agency</h3>
+            <p>Port and Vessel Operations</p>
+          </div>
         </div>
       </div>
     </section>
@@ -266,6 +271,20 @@
 
     document.querySelector('.carousel-btn.prev').addEventListener('click', prevSlide);
     document.querySelector('.carousel-btn.next').addEventListener('click', nextSlide);
+
+    // Ensure video stays muted
+    const serviceVideo = document.querySelector('.services-video video');
+    if (serviceVideo) {
+      // Set initial muted state
+      serviceVideo.muted = true;
+      
+      // Add event listener to ensure it stays muted
+      serviceVideo.addEventListener('volumechange', function() {
+        if (!this.muted) {
+          this.muted = true;
+        }
+      });
+    }
 
     // --- Fade-in on scroll for sections ---
     function revealSections() {

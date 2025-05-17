@@ -894,44 +894,6 @@ button:hover, .project-info button:hover, .contact-form button:hover, .carousel-
     }
 }
 
-/* ========== Services Grid & Card ========== */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  margin: 32px 0 0 0;
-}
-
-.service-card {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(0,91,175,0.07);
-  padding: 32px 24px;
-  text-align: center;
-  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s, background 0.3s;
-  border: 1.5px solid #eaf4ff;
-  cursor: pointer;
-}
-
-.service-card:hover {
-  box-shadow: 0 8px 32px rgba(0,91,175,0.15), 0 1.5px 8px rgba(0,0,0,0.08);
-  transform: translateY(-8px) scale(1.03);
-  border-color: var(--blue);
-  background: var(--light-blue);
-}
-
-.service-card h3 {
-  color: var(--blue);
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-}
-
-.service-card p {
-  color: var(--text-gray);
-  font-size: 1rem;
-  margin: 0;
-}
-
 /* =====================
    About Section
    ===================== */
@@ -1102,10 +1064,6 @@ h1, h2, h3, h4, h5, h6 {
         gap: 30px;
     }
     
-    .service-card {
-        padding: 28px 20px;
-    }
-    
     .carousel {
         max-width: 700px;
     }
@@ -1138,9 +1096,8 @@ h1, h2, h3, h4, h5, h6 {
     .carousel-btn.prev { left: 10px; }
     .carousel-btn.next { right: 10px; }
     
-    
-    .service-card {
-        padding: 25px 18px;
+    .carousel {
+        max-width: 700px;
     }
     
     .section-title-container {
@@ -1322,6 +1279,139 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
         margin-bottom: 15px;
     }
+}
+
+/* Services Container with Video */
+.services-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.services-video {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,91,175,0.12), 0 4px 12px rgba(0,0,0,0.06);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0;
+  margin-left: 30px;
+  border: 1px solid rgba(0,91,175,0.1);
+  height: calc(100% - 10px); /* Adjusting to match the grid height accounting for borders */
+  align-self: stretch;
+}
+
+.services-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,91,175,0.15), 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.services-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+  background-color: #000;
+  object-fit: cover;
+}
+
+.services-grid {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 280px;
+  margin-right: 30px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,91,175,0.07);
+  padding: 30px 12px; /* Slightly reduced vertical padding */
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s, background 0.3s;
+  border: 1.5px solid #eaf4ff;
+  cursor: pointer;
+  margin-bottom: 0;
+  flex: 1; /* Make all cards take equal space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 32px rgba(0,91,175,0.15), 0 1.5px 8px rgba(0,0,0,0.08);
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--blue);
+  background: var(--light-blue);
+}
+
+.service-card h3 {
+  color: var(--blue);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+
+.service-card p {
+  color: var(--text-gray);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 992px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .services-video {
+    max-width: 450px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0; /* Reset left margin on smaller screens */
+    height: auto; /* Reset height on smaller screens */
+    aspect-ratio: 16/9; /* Use aspect ratio instead */
+  }
+  
+  .services-video video {
+    height: 100%;
+    aspect-ratio: 16/9;
+  }
+  
+  .services-grid {
+    width: 100%;
+  }
+  
+  .service-card {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    gap: 20px;
+  }
+  
+  .services-video {
+    max-width: 400px;
+  }
+  
+  .service-card {
+    padding: 25px 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-video {
+    max-width: 100%;
+  }
 }
   
   
