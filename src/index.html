@@ -78,46 +78,67 @@
 
     <section id="projects" class="carousel-section">
         <h2>Major Projects</h2>
-        <div class="carousel">
+        <div class="carousel-wrapper">
           <button class="carousel-btn left" onclick="prevSlide()">&#10094;</button>
       
-          <div class="carousel-track" id="carousel-track">
-            <div class="carousel-slide">
-              <img src="images/project1.jpg" alt="Project 1" />
-              <h3>Bali Mandara Toll Road</h3>
-              <p>Marine support for toll road development over water in Bali.</p>
-            </div>
-            <div class="carousel-slide">
-              <img src="images/project2.jpg" alt="Project 2" />
-              <h3>Suramadu Bridge</h3>
-              <p>Logistics for Surabaya–Madura bridge construction.</p>
-            </div>
-            <div class="carousel-slide">
-              <img src="images/project3.jpg" alt="Project 3" />
-              <h3>G Island Reclamation</h3>
-              <p>Support during North Jakarta island expansion.</p>
-            </div>
-            <div class="carousel-slide">
-              <img src="images/project4.jpg" alt="Project 4" />
-              <h3>Kotabaru-Batulicin Bridge</h3>
-              <p>Bridge construction support in South Kalimantan.</p>
-            </div>
-            <div class="carousel-slide">
-              <img src="images/project5.jpg" alt="Project 5" />
-              <h3>Jakarta Giant Sea Wall</h3>
-              <p>Flood barrier logistics project in North Jakarta.</p>
+          <div class="carousel">
+            <div class="carousel-track" id="carousel-track">
+              <div class="carousel-slide">
+                <img src="images/mandara.jpg" alt="Project 1" />
+                <h3>Bali Mandara Toll Road</h3>
+                <p>Marine support for toll road development over water in Bali.</p>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/project2.jpg" alt="Project 2" />
+                <h3>Suramadu Bridge</h3>
+                <p>Logistics for Surabaya–Madura bridge construction.</p>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/project3.jpg" alt="Project 3" />
+                <h3>G Island Reclamation</h3>
+                <p>Support during North Jakarta island expansion.</p>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/project4.jpg" alt="Project 4" />
+                <h3>Kotabaru-Batulicin Bridge</h3>
+                <p>Bridge construction support in South Kalimantan.</p>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/project5.jpg" alt="Project 5" />
+                <h3>Jakarta Giant Sea Wall</h3>
+                <p>Flood barrier logistics project in North Jakarta.</p>
+              </div>
             </div>
           </div>
       
           <button class="carousel-btn right" onclick="nextSlide()">&#10095;</button>
         </div>
-    </section>      
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p><strong>Head Office:</strong> SOHO Capital Lt 19 Unit 01-09, Podomoro City, Jl. S. Parman Kav. 28, Jakarta Barat 11470</p>
     </section>
-  </main>
+            
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+      
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Head Office</h3>
+            <p>SOHO Capital Lt 19 Unit 01-09<br>
+               Podomoro City, Jl. S. Parman Kav. 28<br>
+               Jakarta Barat 11470</p>
+            <p><strong>Phone:</strong> +62 812-3456-7890</p>
+            <p><strong>Email:</strong> info@dianunggulsamudra.com</p>
+          </div>
+      
+          <form action="https://formspree.io/f/mldbzpwk" method="POST" class="contact-form">
+            <label for="email">Your Email</label>
+            <input type="email" name="email" id="email" required placeholder="you@example.com" />
+      
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="6" required placeholder="Write your message here..."></textarea>
+      
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>      
 
   <footer>
     <div class="container">
@@ -131,7 +152,7 @@
     const slides = document.querySelectorAll(".carousel-slide");
   
     function updateCarousel() {
-      const width = slides[0].clientWidth;
+      const width = slides[0].offsetWidth;
       track.style.transform = `translateX(-${currentIndex * width}px)`;
     }
   
@@ -145,7 +166,8 @@
       updateCarousel();
     }
   
-    window.addEventListener("resize", updateCarousel); // Keep it responsive
+    window.addEventListener("resize", updateCarousel);
+    window.addEventListener("load", updateCarousel);
   </script>    
 </body>
 </html>
