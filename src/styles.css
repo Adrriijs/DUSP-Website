@@ -241,14 +241,50 @@ section:hover h2::after {
 
 .columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px 0;
+    list-style: none;
+}
+
+.columns li {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,91,175,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border-left: 3px solid transparent;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
 }
 
 .columns li:hover {
-    box-shadow: 0 8px 32px rgba(0,91,175,0.13), 0 1.5px 8px rgba(0,0,0,0.08);
-    background: #fafdff;
+    box-shadow: 0 8px 25px rgba(0,91,175,0.15), 0 1.5px 8px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+    border-left: 3px solid var(--blue);
+    background: linear-gradient(to right, rgba(0,91,175,0.03), white);
+}
+
+.columns li::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--blue);
+    border-radius: 50%;
+    left: -5.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.columns li:hover::before {
+    opacity: 1;
 }
 
 /* =====================
@@ -831,6 +867,16 @@ button:hover, .project-info button:hover, .contact-form button:hover, .carousel-
     .contact-form {
         min-width: 100%;
     }
+    .columns {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+    
+    .columns li {
+        padding: 15px;
+        min-height: 70px;
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 700px) {
@@ -1160,6 +1206,111 @@ h1, h2, h3, h4, h5, h6 {
         width: 36px;
         height: 36px;
         font-size: 1.3rem;
+    }
+}
+
+/* =====================
+   Clients/Customers Section
+   ===================== */
+.client-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+.client-grid {
+    margin-top: 10px;
+}
+
+.columns li i {
+    color: var(--blue);
+    margin-right: 8px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.columns li:hover i {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px 0;
+    list-style: none;
+}
+
+.columns li {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,91,175,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border-left: 3px solid transparent;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.columns li:hover {
+    box-shadow: 0 8px 25px rgba(0,91,175,0.15), 0 1.5px 8px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+    border-left: 3px solid var(--blue);
+    background: linear-gradient(to right, rgba(0,91,175,0.03), white);
+}
+
+.columns li::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--blue);
+    border-radius: 50%;
+    left: -5.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.columns li:hover::before {
+    opacity: 1;
+}
+
+/* Add subtle motion effect to draw attention */
+@keyframes client-card-pulse {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+.columns li:nth-child(3n+1):hover {
+    animation: client-card-pulse 2s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .columns {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+    
+    .columns li {
+        padding: 15px;
+        min-height: 70px;
+        font-size: 0.95rem;
+    }
+    
+    .client-intro {
+        font-size: 1rem;
+        margin-bottom: 15px;
     }
 }
   
