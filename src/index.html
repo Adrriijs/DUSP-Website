@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PT DIAN UNGGUL SAMUDRA PERKASA</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
 <body>
     <header class="hero">
         <div class="container hero-flex">
-          <img src="images/logo without name.png" alt="Company Logo" class="logo" />
+          <img src="images/logo no name no bg.png" alt="Company Logo" class="logo" />
           <div class="hero-text">
             <h1>PT DIAN UNGGUL SAMUDRA PERKASA</h1>
             <p>Reliable Marine Transportation and Shipyard Solutions</p>
@@ -17,8 +19,6 @@
         </div>
     </header>
       
-      
-
   <nav class="navbar">
     <ul>
       <li><a href="#about">About</a></li>
@@ -30,28 +30,41 @@
   </nav>
 
   <main class="container">
-    <section id="about">
+    <section id="about" class="section-fade">
       <h2>About Us</h2>
       <p>
-        As a maritime country with over 17,000 islands, Indonesia demands strong logistics at sea. PT Dian Unggul Samudra Perkasa was established to support this need by providing tugboats and barges, mainly for coal transshipment and infrastructure transport across Sumatra, Java, Kalimantan, and Sulawesi.
+        PT DIAN UNGGUL SAMUDRA PERKASA is a trusted shipping company based in Indonesia, providing vessel leasing and maritime logistics services across the archipelago. With over 17,000 islands and 70% of the country's area covered by ocean, efficient and reliable sea transport is critical to connecting Indonesia’s diverse regions.
+        <br>
+        Established to meet this growing demand, we operate a fleet of tugboats and barges serving bulk material transport, particularly for coal and other project cargo. Our services cover key regions including Sumatra, Java, Kalimantan, and Sulawesi.
+        <br>
+        As maritime demand grows, we remain committed to expanding and modernizing our fleet to ensure timely, safe, and dependable shipping services.
       </p>
     </section>
 
-    <section id="services">
+    <section id="services" class="section-fade">
       <h2>Our Services</h2>
-      <ul>
-        <li><strong>Shipping Business</strong> – Tugboat and Barge Rental (Time Charter & Freight Charter)</li>
-        <li><strong>Docking Services</strong> – Shipyard Facilities</li>
-        <li><strong>Shipping Agency</strong> – Port and Vessel Operations</li>
-      </ul>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Shipping Business</h3>
+          <p>Tugboat and Barge Rental (Time Charter & Freight Charter)</p>
+        </div>
+        <div class="service-card">
+          <h3>Docking Services</h3>
+          <p>Shipyard Facilities</p>
+        </div>
+        <div class="service-card">
+          <h3>Shipping Agency</h3>
+          <p>Port and Vessel Operations</p>
+        </div>
+      </div>
     </section>
 
-    <section id="fleet">
+    <section id="fleet" class="section-fade">
       <h2>Our Fleet</h2>
       <p>We operate a diverse fleet including tugboats such as DWI PUTRA 01, ANTASENA, and LUMBA-LUMBA, and barges like ESA VIII and BAIDURI 30256, to serve various project needs.</p>
     </section>
 
-    <section id="customers">
+    <section id="customers" class="section-fade">
         <h2>Our Clients</h2>
         <p>PT Dian Unggul Samudra Perkasa has proudly served major companies and government projects across Indonesia:</p>
         <ul class="columns">
@@ -76,10 +89,10 @@
         </ul>
     </section>  
 
-    <section id="projects" class="carousel-section">
+    <section id="projects" class="carousel-section section-fade">
         <h2>Major Projects</h2>
         <div class="carousel-wrapper">
-          <button class="carousel-btn left" onclick="prevSlide()">&#10094;</button>
+          <button class="carousel-btn prev">&#10094;</button>
       
           <div class="carousel">
             <div class="carousel-track" id="carousel-track">
@@ -89,12 +102,12 @@
                 <p>Marine support for toll road development over water in Bali.</p>
               </div>
               <div class="carousel-slide">
-                <img src="images/project2.jpg" alt="Project 2" />
+                <img src="images/suramadu.jpg" alt="Project 2" />
                 <h3>Suramadu Bridge</h3>
                 <p>Logistics for Surabaya–Madura bridge construction.</p>
               </div>
               <div class="carousel-slide">
-                <img src="images/project3.jpg" alt="Project 3" />
+                <img src="images/g island.png" alt="Project 3" />
                 <h3>G Island Reclamation</h3>
                 <p>Support during North Jakarta island expansion.</p>
               </div>
@@ -111,11 +124,11 @@
             </div>
           </div>
       
-          <button class="carousel-btn right" onclick="nextSlide()">&#10095;</button>
+          <button class="carousel-btn next">&#10095;</button>
         </div>
     </section>
             
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section section-fade">
         <h2>Contact Us</h2>
       
         <div class="contact-container">
@@ -143,10 +156,16 @@
   <footer>
     <div class="container">
       <p>&copy; 2025 PT DIAN UNGGUL SAMUDRA PERKASA. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
     </div>
   </footer>
 
   <script>
+    // Carousel logic
     let currentIndex = 0;
     const track = document.getElementById("carousel-track");
     const slides = document.querySelectorAll(".carousel-slide");
@@ -168,6 +187,33 @@
   
     window.addEventListener("resize", updateCarousel);
     window.addEventListener("load", updateCarousel);
+
+    document.querySelector('.carousel-btn.prev').addEventListener('click', prevSlide);
+    document.querySelector('.carousel-btn.next').addEventListener('click', nextSlide);
+
+    // --- Fade-in on scroll for sections ---
+    function revealSections() {
+      const sections = document.querySelectorAll('.section-fade');
+      const trigger = window.innerHeight * 0.92;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < trigger) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('load', revealSections);
+
+    // --- Navbar shadow on scroll ---
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
   </script>    
 </body>
 </html>
