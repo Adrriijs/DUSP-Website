@@ -11,7 +11,9 @@
 <body>
     <header class="hero">
         <div class="container hero-flex">
-          <img src="images/logo no name no bg.png" alt="Company Logo" class="logo" />
+          <div class="logo-container">
+            <img src="images/logo no name no bg.png" alt="Company Logo" class="logo" />
+          </div>
           <div class="hero-text">
             <h1>PT DIAN UNGGUL SAMUDRA PERKASA</h1>
             <p>Reliable Marine Transportation and Shipyard Solutions</p>
@@ -31,18 +33,33 @@
 
   <main class="container">
     <section id="about" class="section-fade">
-      <h2>About Us</h2>
-      <p>
-        PT DIAN UNGGUL SAMUDRA PERKASA is a trusted shipping company based in Indonesia, providing vessel leasing and maritime logistics services across the archipelago. With over 17,000 islands and 70% of the country's area covered by ocean, efficient and reliable sea transport is critical to connecting Indonesia’s diverse regions.
-        <br>
-        Established to meet this growing demand, we operate a fleet of tugboats and barges serving bulk material transport, particularly for coal and other project cargo. Our services cover key regions including Sumatra, Java, Kalimantan, and Sulawesi.
-        <br>
-        As maritime demand grows, we remain committed to expanding and modernizing our fleet to ensure timely, safe, and dependable shipping services.
-      </p>
+      <div class="section-title-container">
+        <h2>About Us</h2>
+      </div>
+      
+      <div class="about-container">
+        <div class="about-text">
+          <p>
+            <span class="company-name">PT DIAN UNGGUL SAMUDRA PERKASA</span> is a <strong>trusted shipping company</strong> based in Indonesia, providing vessel leasing and maritime logistics services across the archipelago. With over <strong>17,000 islands</strong> and 70% of the country's area covered by ocean, efficient and reliable sea transport is <strong>critical to connecting</strong> Indonesia's diverse regions.
+          </p>
+          <p>
+            Established to meet this growing demand, we operate a <strong>fleet of tugboats and barges</strong> serving bulk material transport, particularly for coal and other project cargo. Our services cover <strong>key regions</strong> including Sumatra, Java, Kalimantan, and Sulawesi.
+          </p>
+          <p>
+            As maritime demand grows, we remain <strong>committed to expanding and modernizing</strong> our fleet to ensure timely, safe, and dependable shipping services.
+          </p>
+        </div>
+        
+        <div class="about-image">
+          <img src="images/about us.jpg" alt="Maritime operations at PT Dian Unggul Samudra Perkasa">
+        </div>
+      </div>
     </section>
 
     <section id="services" class="section-fade">
-      <h2>Our Services</h2>
+      <div class="section-title-container">
+        <h2>Our Services</h2>
+      </div>
       <div class="services-grid">
         <div class="service-card">
           <h3>Shipping Business</h3>
@@ -60,12 +77,16 @@
     </section>
 
     <section id="fleet" class="section-fade">
-      <h2>Our Fleet</h2>
+      <div class="section-title-container">
+        <h2>Our Fleet</h2>
+      </div>
       <p>We operate a diverse fleet including tugboats such as DWI PUTRA 01, ANTASENA, and LUMBA-LUMBA, and barges like ESA VIII and BAIDURI 30256, to serve various project needs.</p>
     </section>
 
     <section id="customers" class="section-fade">
-        <h2>Our Clients</h2>
+        <div class="section-title-container">
+          <h2>Our Clients</h2>
+        </div>
         <p>PT Dian Unggul Samudra Perkasa has proudly served major companies and government projects across Indonesia:</p>
         <ul class="columns">
           <li>PT Grant Surya Pondasi</li>
@@ -90,7 +111,9 @@
     </section>  
 
     <section id="projects" class="carousel-section section-fade">
-        <h2>Major Projects</h2>
+        <div class="section-title-container">
+          <h2>Major Projects</h2>
+        </div>
         <div class="carousel-wrapper">
           <button class="carousel-btn prev">&#10094;</button>
       
@@ -129,7 +152,9 @@
     </section>
             
     <section id="contact" class="contact-section section-fade">
-        <h2>Contact Us</h2>
+        <div class="section-title-container">
+          <h2>Contact Us</h2>
+        </div>
       
         <div class="contact-container">
           <div class="contact-info">
@@ -141,25 +166,56 @@
             <p><strong>Email:</strong> info@dianunggulsamudra.com</p>
           </div>
       
-          <form action="https://formspree.io/f/mldbzpwk" method="POST" class="contact-form">
-            <label for="email">Your Email</label>
-            <input type="email" name="email" id="email" required placeholder="you@example.com" />
-      
-            <label for="message">Message</label>
-            <textarea name="message" id="message" rows="6" required placeholder="Write your message here..."></textarea>
-      
-            <button type="submit">Send Message</button>
-          </form>
+          <div class="contact-form-card">
+            <form action="https://formspree.io/f/mldbzpwk" method="POST" class="contact-form">
+              <label for="email">Your Email</label>
+              <input type="email" name="email" id="email" required placeholder="you@example.com" />
+        
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="6" required placeholder="Write your message here..."></textarea>
+        
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
         </div>
       </section>      
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 PT DIAN UNGGUL SAMUDRA PERKASA. All rights reserved.</p>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo no name no bg.png" alt="DUSP Logo">
+          <p>Reliable and professional maritime logistics for Indonesia's diverse needs.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#fleet">Our Fleet</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-map-marker-alt"></i> SOHO Capital Lt 19, Podomoro City, Jakarta</p>
+          <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+          <p><i class="fas fa-envelope"></i> info@dianunggulsamudra.com</p>
+        </div>
+      </div>
+      
       <div class="footer-social">
         <a href="#" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="#" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="#" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 PT DIAN UNGGUL SAMUDRA PERKASA. All rights reserved.</p>
       </div>
     </div>
   </footer>
