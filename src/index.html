@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT DIAN UNGGUL SAMUDRA PERKASA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="hero">
+        <div class="container hero-flex">
+          <img src="images/logo without name.png" alt="Company Logo" class="logo" />
+          <div class="hero-text">
+            <h1>PT DIAN UNGGUL SAMUDRA PERKASA</h1>
+            <p>Reliable Marine Transportation and Shipyard Solutions</p>
+          </div>
+        </div>
+    </header>
+      
+      
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        As a maritime country with over 17,000 islands, Indonesia demands strong logistics at sea. PT Dian Unggul Samudra Perkasa was established to support this need by providing tugboats and barges, mainly for coal transshipment and infrastructure transport across Sumatra, Java, Kalimantan, and Sulawesi.
+      </p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li><strong>Shipping Business</strong> – Tugboat and Barge Rental (Time Charter & Freight Charter)</li>
+        <li><strong>Docking Services</strong> – Shipyard Facilities</li>
+        <li><strong>Shipping Agency</strong> – Port and Vessel Operations</li>
+      </ul>
+    </section>
+
+    <section id="fleet">
+      <h2>Our Fleet</h2>
+      <p>We operate a diverse fleet including tugboats such as DWI PUTRA 01, ANTASENA, and LUMBA-LUMBA, and barges like ESA VIII and BAIDURI 30256, to serve various project needs.</p>
+    </section>
+
+    <section id="customers">
+        <h2>Our Clients</h2>
+        <p>PT Dian Unggul Samudra Perkasa has proudly served major companies and government projects across Indonesia:</p>
+        <ul class="columns">
+          <li>PT Grant Surya Pondasi</li>
+          <li>PT Grant Surya Multi Sarana</li>
+          <li>PT Timur Bahari</li>
+          <li>PT Lima Srikandi Jaya</li>
+          <li>PT Dharma Subur Satya</li>
+          <li>PT Nemoasia</li>
+          <li>PT Global Borneo Energi</li>
+          <li>PT Asmin Koalindo Tuhup</li>
+          <li>PT Istaka Karya (Persero)</li>
+          <li>PT Wijaya Karya Tbk</li>
+          <li>PT Adhi Karya Tbk</li>
+          <li>PT Daretric Utama</li>
+          <li>PT Multi Pondasi Utama</li>
+          <li>PT Selat Labuan Sakti</li>
+          <li>PT Karya Tara Mandiri</li>
+          <li>PT Marunda Jaya</li>
+          <li>PT Bintan Kharisma Lines</li>
+          <li>PT Cipta Buana Samudra</li>
+        </ul>
+    </section>  
+
+    <section id="projects" class="carousel-section">
+        <h2>Major Projects</h2>
+        <div class="carousel">
+          <button class="carousel-btn left" onclick="prevSlide()">&#10094;</button>
+      
+          <div class="carousel-track" id="carousel-track">
+            <div class="carousel-slide">
+              <img src="images/project1.jpg" alt="Project 1" />
+              <h3>Bali Mandara Toll Road</h3>
+              <p>Marine support for toll road development over water in Bali.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/project2.jpg" alt="Project 2" />
+              <h3>Suramadu Bridge</h3>
+              <p>Logistics for Surabaya–Madura bridge construction.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/project3.jpg" alt="Project 3" />
+              <h3>G Island Reclamation</h3>
+              <p>Support during North Jakarta island expansion.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/project4.jpg" alt="Project 4" />
+              <h3>Kotabaru-Batulicin Bridge</h3>
+              <p>Bridge construction support in South Kalimantan.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/project5.jpg" alt="Project 5" />
+              <h3>Jakarta Giant Sea Wall</h3>
+              <p>Flood barrier logistics project in North Jakarta.</p>
+            </div>
+          </div>
+      
+          <button class="carousel-btn right" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>      
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Head Office:</strong> SOHO Capital Lt 19 Unit 01-09, Podomoro City, Jl. S. Parman Kav. 28, Jakarta Barat 11470</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 PT DIAN UNGGUL SAMUDRA PERKASA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentIndex = 0;
+    const track = document.getElementById("carousel-track");
+    const slides = document.querySelectorAll(".carousel-slide");
+  
+    function updateCarousel() {
+      const width = slides[0].clientWidth;
+      track.style.transform = `translateX(-${currentIndex * width}px)`;
+    }
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }
+  
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+  
+    window.addEventListener("resize", updateCarousel); // Keep it responsive
+  </script>    
+</body>
+</html>
