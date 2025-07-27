@@ -38,23 +38,23 @@ export default function About() {
           }`}
         >
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <p className="text-gray-700 leading-relaxed mb-6">
-                <span className="font-semibold text-gray-900">PT DIAN UNGGUL SAMUDRA PERKASA</span> is a{" "}
-                <strong>trusted shipping company</strong> based in Indonesia, providing vessel leasing and maritime
-                logistics services across the archipelago. With over <strong>17,000 islands</strong> and 70% of the
+            <div className="bg-white rounded-2xl p-12 min-h-[400px] shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <p className="text-gray-700 leading-relaxed mb-8 text-xl">
+                <span className="font-semibold text-gray-900 text-2xl">PT DIAN UNGGUL SAMUDRA PERKASA</span> is a{" "}
+                <strong className="text-2xl">trusted shipping company</strong> based in Indonesia, providing vessel leasing and maritime
+                logistics services across the archipelago. With over <strong className="text-2xl">17,000 islands</strong> and 70% of the
                 country's area covered by ocean, efficient and reliable sea transport is{" "}
-                <strong>critical to connecting</strong> Indonesia's diverse regions.
+                <strong className="text-2xl">critical to connecting</strong> Indonesia's diverse regions.
               </p>
 
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Established to meet this growing demand, we operate a <strong>fleet of tugboats and barges</strong>{" "}
+              <p className="text-gray-700 leading-relaxed mb-8 text-xl">
+                Established to meet this growing demand, we operate a <strong className="text-2xl">fleet of tugboats and barges</strong>{" "}
                 serving bulk material transport, particularly for coal and other project cargo. Our services cover{" "}
-                <strong>key regions</strong> including Sumatra, Java, Kalimantan, and Sulawesi.
+                <strong className="text-2xl">key regions</strong> including Sumatra, Java, Kalimantan, and Sulawesi.
               </p>
 
-              <p className="text-gray-700 leading-relaxed">
-                As maritime demand grows, we remain <strong>committed to expanding and modernizing</strong> our fleet to
+              <p className="text-gray-700 leading-relaxed text-xl">
+                As maritime demand grows, we remain <strong className="text-2xl">committed to expanding and modernizing</strong> our fleet to
                 ensure timely, safe, and dependable shipping services.
               </p>
             </div>
