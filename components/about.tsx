@@ -63,7 +63,7 @@ export default function About() {
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/about us.jpg"
                 alt="Maritime operations at PT Dian Unggul Samudra Perkasa"
                 width={600}
                 height={400}
